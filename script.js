@@ -1,3 +1,5 @@
+var favorites = JSON.parse(localStorage.getItem('favorites'));
+console.log(favorites);
 var currency = "eur";
 var currencySymbol;
 
@@ -16,7 +18,7 @@ xhr.open("GET", url);
 xhr.onreadystatechange = function () {
    if (xhr.readyState === 4) {
       //console.log(xhr.status);
-      console.log(JSON.parse(xhr.response));
+      //console.log(JSON.parse(xhr.response));
       res = JSON.parse(xhr.response);
       populateList(res);
    }};
@@ -50,6 +52,15 @@ function populateList(coins)
       coin.append(logo);
       coin.append(info);
       
+      var favoriteButton = $(document.createElement("button")).attr("id", name).addClass("favoriteButton").attr("onclick", "toggleFavorite(this)");
+
+      if(favorites.indexOf(name) > -1)
+      {
+         favoriteButton.addClass("favorite");
+      };
+
+      coin.append(favoriteButton);
+
       list.append(coin);
    }
    
