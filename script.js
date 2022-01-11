@@ -8,7 +8,7 @@ switch(currency)
    case "jpy" : currencySymbol = "¥"; break;
 }
 
-var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=true`;
+var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=1&page=1&sparkline=true`;
 
 var xhr = new XMLHttpRequest();
 xhr.open("GET", url);
@@ -26,7 +26,6 @@ xhr.send();
 function populateList(coins)
 {
    var coinsList = $("#coinsList");
-   var list = $(document.createDocumentFragment());
 
    for(i = 0; i < coins.length; i++)
    {
@@ -57,3 +56,5 @@ function populateList(coins)
    
    $.sparkline_display_visible();
 }
+
+
