@@ -1,63 +1,173 @@
-body{
-    background-color:rgb(252, 247, 214) ;
+*{
+    color:rgb(252, 245, 245)
 }
 
+.maindiv{
+    background: rgb(67, 68, 68);
+    /*background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);*/
+}
+.navbtn{
+    margin-left:100px;
+    padding-left: 10px;
+}
 .btnescolha {  
-    
-    margin-left: 230px ;
-    padding-left: 50px ;
-    padding-right: 50px ;
-    background-color: rgb(220, 207, 20) ;
-    border: transparent ;
+    color: rgb(41, 40, 40);
+    padding-left: 10px ;
+    padding-right: 10px ;
+    background-color: #EAEA4E ;
+    border:none ;
+    cursor: pointer ;
+   
+  
 }
+
 .btnescolha:active{
-    color:chocolate;
+    color:rgb(66, 56, 82); 
 }
+
+.btnescolha:hover{
+    background-color: rgb(255, 255, 0);
+    color:rgb(184, 143, 255) ;
+}
+
 
 .navbar{
     width: auto ;
     height: 100px ;
-    background-color:rgb(10, 4, 92) ;
-    border-bottom: 1px solid yellow ;
+    /*background-image:url(/quadradosnNAV.jpg) ;
+    background-size: cover;*/
+    background-color: rgba(6, 7, 1, 0.8); 
+    border-bottom: 1px solid rgb(219, 208, 50) ;
+    
+}
+ .navbar-brand{
+    cursor: default;
+ }
+
+#titleofpage{
+    padding-top: 30px;
+    text-align: center;
+    font-size: 90px;
+    opacity: 75%;
+    color: rgb(252, 252, 253) ;
 }
 
 .form-inline{
     margin-right: 100px;
-    padding-left: 500px;
+    
 }
 
 #logo{
     width: 80px;                         
     margin-left:100px;
+    filter: drop-shadow(-7px -7px 4px #000);
+    cursor: auto;
 }
 
 .crypto_img{
-    width: 100px;
-    height: 100px;
+    
+    width: 300px;
+    height: 300px;
+    padding-left:00px;
     background-color: silver ;
-    transform: rotate(45deg);  
+    background-image: url(/quadradosnNAV.jpg);
+    clip-path: circle(50% at 50% 50%);
+    transform: translate(7px, 0px);
+    float: right;
+    
+}
+
+#fav_icon{
+    float: right;
+    position: relative;
+    margin-top: 275px;
+    margin-left:830px;
+    position: absolute;
+    background-color: rgba(253, 253, 252, 0.8);
+    clip-path: circle(55% at 50% 50%);
 }
 
 .especificacoes{
     max-width: 200px;
-    border-bottom: 1px solid cornflowerblue;
-    border-left: 1px solid cornflowerblue;
-    margin-left: 100px ;
-    margin-top: 40px;
-    text-align: center;
+    margin-left: 30px ;
+    text-align: left;
     padding: 8px;
     
 }
+.linha{
+    background-color: yellow;
+    margin-left:30px;
+    max-width: 500px;
+}
+
 
 .esp{
-    background-color: rgb(252, 246, 206);
-    margin-top:110px;
+    width: 1000px ;
+    margin-top:80px;
     height: 300px ;
     margin-left: 200px ;
     margin-right: 200px;
+    
+}
+.nome{
+    width:100px;
 }
 
+
 .descricao {
-    padding: 30px;
+    padding: 20px;
     margin-left: 200px ;
+    max-width: 1100px;
+    text-align: justify;
+    
+
 }
+.descricao p {
+    text-indent: 30px;
+    column-count: 2;
+}
+.footer{
+    border-top: 1px solid rgb(219, 208, 50);
+    width: 99.35vw;
+    height: 30vh;
+    background-color: rgba(6, 7, 1, 0.8);
+    color: seashell;
+}
+.footer p , h3 {
+    
+    padding: 20px;    
+    margin-left: 200px;
+    width: 325px;
+    column-count: 1;
+}
+
+.material-icons{
+    float: right;
+    margin-right: 75px;
+    margin-top: 10px;
+    padding: 10px;
+}
+#icon_emails{
+    margin-left: 90px;
+}
+
+
+
+
+
+/*EDIÇÃO DA SCROLLBAR */
+
+    /*LARGURA DA SCROOLBAR*/
+::-webkit-scrollbar{
+ width: 10px; 
+}
+    /*COR DA SCROOLBAR QUANDO O MOUSE NAO SE ENCONTRA POR CIMA DA MESMA*/
+::-webkit-scrollbar-thumb {
+    background: rgb(193, 197, 155);
+  }
+     /*COR DA SCROOLBAR QUANDO O MOUSE SE ENCONTRA POR CIMA DA MESMA*/
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(84, 88, 4, 0.719);
+    
+  }
+  

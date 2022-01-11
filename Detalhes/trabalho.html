@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <title>Moedinhas</title>
-    <link rel="icon" href="coins2.png">
-    <link rel="stylesheet" href="css/trabalho.css">
-</head>
-<body>
-    <nav class="navbar  ">
-        <a class="navbar-brand" href="#">
-            <img id= "logo" src="coins2.png"> <!--logotipo imagem-->
-        </a>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            </form>  
-    </nav>
-    <button class ="btnescolha ">Homepage</button>  
-    <button class ="btnescolha ">Detalhes</button>
-    <button class ="btnescolha ">Favoritos</button> 
 
-   <!-- <div class="crypto_img">
-    </div> -->
-        <div class="esp">
-          <p class="especificacoes"> Nome :</p>
-          <p class="especificacoes"> Ranking Atual :</p>
-          <p class="especificacoes"> Valor Atual :</p>
-          <p class="especificacoes"> Mudança de Preço :</p>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
+    integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"
+    integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <title>Moedinhas</title>
+  <link rel="icon" href="/coins2.png">
+  <link rel="stylesheet" href="css/trabalho.css">
+</head>
+
+<body>
+  <nav class="navbar  ">
+    <a class="navbar-brand" href="#">
+      <img id="logo" src="coins2.png">
+      <!--logotipo imagem-->
+    </a>
+    <div class="navbtn">
+      <button class="btnescolha ">Homepage</button>
+      <button class="btnescolha ">Detalhes</button>
+      <button class="btnescolha ">Favoritos</button>
+      <button class="btnescolha">Conversão de Moedas</button>
+    </div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+
+  </nav>
+  <div class="maindiv">
+    <h1 id="titleofpage">Detalhes</h1>
+
+
+    
+    <div class="esp">
+      <div class="crypto_img">
+        
+      </div>
+      <div id="fav_icon">
+        <img src="/favorito_nao_adicionado.png" alt="icon_favorito">
+      </div>
+      <h5 class="especificacoes nome"> <!--NOME DA MOEDA PELA API--></h5><hr class="linha">
+      <h5 class="especificacoes ranking"> # <!--RANKING ATUAL PELA API--></h5><hr class="linha">
+      <h5 class="especificacoes valor"><!--VALOR ATUAL PELA API--></h5><hr class="linha">
+      <h5 class="especificacoes mpreco"> Variação <!--MUDANÇA DE PREÇO PELA API--></h5><hr class="linha">
+    </div>
+    <div class="descricao">
+      <h2>Sobre:</h2>
+      <p>                                <!--TEXTO SOBRE MOEDA SEGUNDO API!!-->
+        Descricão :Texto de descricao da moeda !!!!! eu jdhasijd ajskd jsk adask dhjaskd jasdj askdja jdkas jd aik
+        aksjemdwa dwwad a wd awd awfffffas das das daw dw dawddawdadadsdw da w daw ds dwa das wa daw awdasda
+        Descricão :Texto de descricao da moeda !!!!! eu jdhasijd ajskd jsk adask dhjaskd jasdj askdja jdkas jd aik
+        aksjemdwa dwwad a wd awd awfffffas das das daw dw dawddawdadadsdw da w daw ds dwa das wa daw awdasda
+        Descricão :Texto de descricao da moeda !!!!! eu jdhasijd ajskd jsk adask dhjaskd jasdj askdja jdkas jd aik
+        aksjemdwa dwwad a wd awd awfffffas das das daw dw dawddawdadadsdw da w daw ds dwa das wa daw awdasda
+        Descricão :Texto de descricao da moeda !!!!! eu jdhasijd ajskd jsk adask dhjaskd jasdj askdja jdkas jd aik
+        aksjemdwa dwwad a wd awd awfffffas das das daw dw dawddawdadadsdw da w daw ds dwa das wa daw awdasda
+      </p>
+    </div>
+  </div>
+  <footer>
+    <div class="footer">
+      <div class="infogrupo">
+          <span class="material-icons"><img id="icon_emails"src="icon_email.png" alt="imagem_emails"><br>
+         <ul>
+           <li>2211883@my.ipleiria.pt</li>
+           <li>2211889@my.ipleiria.pt</li>
+           <li>2211881@my.ipleiria.pt</li>
+         </ul> 
+        </span>
+          <h3>Sobre Nós:</h3>
+          <p>Grupo de estudante, atualmente a estudar no curso Tesp-PSI, no Politecnico de Leiria, 1 ºAno. </p>
+          
         </div>
-        <div>
-          <h2 class="descricao">Sobre:</h2>
-          <p class="descricao"> Descricão :Texto de descricao da moeda !!!!!</p>
-        </div>
+    </div>
+  </footer>
 </body>
+<script src="C:\Users\Jmpl\Desktop\trabalho PWC\script.js"></script>
 </html>
