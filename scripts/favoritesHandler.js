@@ -9,13 +9,18 @@ if(!favorites)
 
 function toggleFavorite(clickedButton)
 {
-    console.log(arguments.callee.caller.);
+    console.log(location.pathname.split('/').pop());
     if($(clickedButton).hasClass("favorite"))
     {
         var name = $(clickedButton).attr("id");
         var index = favorites.indexOf(name);
 
         favorites.splice(index, 1);
+
+        if(location.pathname.split('/').pop() === "favoritos.html")
+        {
+            $(clickedButton.parentNode).remove();
+        }
     }
     else
     {
