@@ -9,6 +9,7 @@ if(!favorites)
 
 function toggleFavorite(clickedButton)
 {
+    console.log(arguments.callee.caller.);
     if($(clickedButton).hasClass("favorite"))
     {
         var name = $(clickedButton).attr("id");
