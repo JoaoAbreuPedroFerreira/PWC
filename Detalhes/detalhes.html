@@ -17,8 +17,13 @@
   <link rel="icon" href="./coins2.png">
   <link rel="stylesheet" href="./css/trabalho.css">
 </head>
-
 <body>
+  <select name="currency" id="currencySelect" onchange="changeCurrency(this)">
+    <option id="eur" value="eur">€</option>
+    <option id="usd" value="usd">$</option>
+    <option id="jpy" value="jpy">¥</option>
+  </select>
+
   <nav class="navbar  ">
     <a class="navbar-brand" href="#">
       <img id="logo" src="coins2.png">
@@ -71,6 +76,8 @@
         </div>
     </div>
   </footer>
+
+  <script src="../scripts/currency.js"></script>
+  <script src="./detalhes.js"></script>
 </body>
-<script src="./detalhes.js"></script>
 </html>
