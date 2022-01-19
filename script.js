@@ -1,32 +1,30 @@
-var currency = "eur";
-var currencySymbol;
+$("#toggle").on("click", toggleTop);
 
-switch(currency)
+apiRequest();
+
+function apiRequest()
 {
-   case "usd" : currencySymbol = "$"; break;
-   case "eur" : currencySymbol = "€"; break;
-   case "jpy" : currencySymbol = "¥"; break;
+   var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=true`;
+
+   var xhr = new XMLHttpRequest();
+   xhr.open("GET", url);
+
+   xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+         //console.log(xhr.status);
+         //console.log(JSON.parse(xhr.response));
+         res = JSON.parse(xhr.response);
+         populateList(res);
+      }
+   };
+
+   xhr.send();
 }
-
-var url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=true`;
-
-var xhr = new XMLHttpRequest();
-xhr.open("GET", url);
-
-xhr.onreadystatechange = function () {
-   if (xhr.readyState === 4) {
-      //console.log(xhr.status);
-      console.log(JSON.parse(xhr.response));
-      res = JSON.parse(xhr.response);
-      populateList(res);
-   }
-};
-
-xhr.send();
 
 function populateList(coins)
 {
    var coinsList = $("#coinsList");
+   coinsList.empty();
    var list = $(document.createDocumentFragment());
 
    for(i = 0; i < coins.length; i++)
@@ -45,7 +43,7 @@ function populateList(coins)
       var sparklineGraph = $(document.createElement("span"));
       
       info.text(`#${rank} ${name} (${symbol}) | ${price} ${currencySymbol} | ${changeIn24H}% | ${marketcap} ${currencySymbol}`);
-      info.attr("href", `./Detalhes/detalhes.html?&currency=${currency}&selectedCoin=${coins[i].id}`);
+      info.attr("href", `./Detalhes/detalhes.html?selectedCoin=${coins[i].id}`);
       info.append(sparklineGraph);
       
       sparklineGraph.sparkline(sparklineValues, {width: "72px", height: "34px"});
@@ -59,4 +57,17 @@ function populateList(coins)
    coinsList.append(list);
    
    $.sparkline_display_visible();
+}
+
+function toggleTop(e)
+{
+   var quantity = $(e.target).val();
+   var coinsList = $("#coinsList");
+   $(coinsList).children("div").toggle();
+
+   for (i = 0; i < quantity; i++) 
+   {
+      var coin = $(coinsList).children("div")[i];
+      $(coin).toggle();
+   }
 }
