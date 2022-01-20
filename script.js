@@ -51,6 +51,15 @@ function populateList(coins)
       coin.append(logo);
       coin.append(info);
       
+      var favoriteButton = $(document.createElement("button")).attr("id", name).addClass("favoriteButton").attr("onclick", "toggleFavorite(this)");
+
+      if(favorites.indexOf(name) > -1)
+      {
+         favoriteButton.addClass("favorite");
+      };
+
+      coin.append(favoriteButton);
+
       list.append(coin);
    }
    
