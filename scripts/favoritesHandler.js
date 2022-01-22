@@ -9,7 +9,6 @@ if(!favorites)
 
 function toggleFavorite(clickedButton)
 {
-    console.log(location.pathname.split('/').pop());
     if($(clickedButton).hasClass("favorite"))
     {
         var name = $(clickedButton).attr("id");
@@ -31,5 +30,4 @@ function toggleFavorite(clickedButton)
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
     $(clickedButton).toggleClass("favorite");
-    console.log(favorites);
 }
