@@ -9,9 +9,18 @@
     <script src="https://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.js"></script>
 </head>
 <body>
+    <select name="currency" id="currencySelect">
+        <option id="eur" value="eur">€</option>
+        <option id="usd" value="usd">$</option>
+        <option id="jpy" value="jpy">¥</option>
+    </select>
+
+    <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
     <div id = "coinsList">
     </div>
     <script src="../scripts/favoritesHandler.js"></script>
+    <script src="../scripts/currency.js"></script>
     <script src="./favoritos.js"></script>
 </body>
 </html>

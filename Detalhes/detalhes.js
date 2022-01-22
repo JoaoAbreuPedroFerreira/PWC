@@ -4,11 +4,11 @@ var selectedCoin = urlParams.get("selectedCoin");
 
 if(selectedCoin)
 {
-    apiRequest();
+   apiRequest();
 }
 else
 {
-    window.location.replace("../index.html");
+   window.location.replace("../index.html");
 }
 
 function apiRequest()
@@ -39,10 +39,22 @@ function apiRequest()
 
 function populateDetailsPage(coin)
 {   
-    $(".descricao p").html(coin.description["en"]);
-    $(".crypto_img").attr("src", coin.image.large);
-    $(".nome").text(coin.name);
-    $(".ranking").text(coin.market_cap_rank + " #");
-    $(".valor").text(coin.market_data.current_price[currency] + " " + currencySymbol);
-    $(".variacao").text(coin.market_data.market_cap_change_percentage_24h.toFixed(2) + " %");
+   $(".descricao p").html(coin.description["en"]);
+   $(".crypto_img").attr("src", coin.image.large);
+   $(".nome").text(coin.name);
+   $(".ranking").text(coin.market_cap_rank + " #");
+   $(".valor").text(coin.market_data.current_price[currency] + " " + currencySymbol);
+
+   if(coin.market_data.market_cap_change_percentage_24h > 0)
+   {
+      coin.market_data.market_cap_change_percentage_24h = `▲ ${coin.market_data.market_cap_change_percentage_24h.toFixed(2)}`;
+   }
+   else
+   {
+      coin.market_data.market_cap_change_percentage_24h = `▼ ${coin.market_data.market_cap_change_percentage_24h.toFixed(2)}`; 
+   }
+
+   $(".variacao").text(coin.market_data.market_cap_change_percentage_24h + " %");
+
+   $("#fav_icon").attr("id", coin.name).addClass("favoriteButton").attr("onclick", "toggleFavorite(this)");
 }

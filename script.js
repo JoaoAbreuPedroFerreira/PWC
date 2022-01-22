@@ -29,7 +29,7 @@ function populateList(coins)
 
    for(i = 0; i < coins.length; i++)
    {
-      var coin = $(document.createElement("div"));
+      var coin = $(document.createElement("div")).attr("data-coin-name", coins[i].name).attr("data-coin-id", coins[i].id).attr("data-coin-symbol", coins[i].symbol);
       var logo = $(document.createElement("img")).attr("src", coins[i].image).width(50).height(50);
       var rank = coins[i].market_cap_rank;
       var name = coins[i].name;
@@ -42,6 +42,15 @@ function populateList(coins)
       var info = $(document.createElement("a"));
       var sparklineGraph = $(document.createElement("span"));
       
+      if(changeIn24H > 0)
+      {
+         changeIn24H = `▲ ${changeIn24H}`;
+      }
+      else
+      {
+         changeIn24H = `▼ ${changeIn24H}`; 
+      }
+
       info.text(`#${rank} ${name} (${symbol}) | ${price} ${currencySymbol} | ${changeIn24H}% | ${marketcap} ${currencySymbol}`);
       info.attr("href", `./Detalhes/detalhes.html?selectedCoin=${coins[i].id}`);
       info.append(sparklineGraph);
