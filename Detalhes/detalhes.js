@@ -56,5 +56,63 @@ function populateDetailsPage(coin)
 
    $(".variacao").text(coin.market_data.market_cap_change_percentage_24h + " %");
 
-   $("#fav_icon").attr("id", coin.name).addClass("favoriteButton").attr("onclick", "toggleFavorite(this)");
+   $(".favoriteButton").attr("id", coin.id).attr("onclick", "toggleFavorite(this)");
+
+   if(favorites.indexOf(coin.id) > -1)
+   {
+      $(".favoriteButton").addClass("favorite");
+   }
+
+   currencyId = Object.keys(coin.market_data.current_price);
+
+   for(i = 0; i < currencyId.length; i++)
+   {
+      var option = $(document.createElement("option")).attr("value", coin.market_data.current_price[currencyId[i]]).text(currencyId[i]);
+
+      $("#toCurrencySelect").append(option);
+   }
+}
+
+$("#toCurrencySelect").on("change", calculate);
+$("#fromInput").keyup(calculate);
+$("#toInput").keyup(calculate);
+
+function calculate(changedInput)
+{
+   var from = $("#fromInput").val();
+   var to = $("#toInput").val(); 
+   var toCurrency = $("#toCurrencySelect").find(":selected").text();
+   var toCurrencyValue = $("#toCurrencySelect").val();
+   var convertedValue;
+   
+   if(changedInput.target.id === "toCurrencySelect")
+   {
+      convertedValue = from * toCurrencyValue;
+
+      $("#toInput").val(convertedValue);
+   }
+   else if(changedInput.target.id === "fromInput")
+   {
+      if(from == "")
+      {
+         $("#fromInput").val(0)
+         from = "0";
+      }
+
+      convertedValue = from * toCurrencyValue;
+      console.log(convertedValue);
+      $("#toInput").val(convertedValue);
+   }
+   else
+   {
+      if(to == "")
+      {
+         $("#toInput").val(0)
+         to = "0";
+      }
+
+      convertedValue = to / toCurrencyValue;
+
+      $("#fromInput").val(convertedValue);
+   }
 }
