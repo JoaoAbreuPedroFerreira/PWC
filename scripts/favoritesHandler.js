@@ -11,8 +11,8 @@ function toggleFavorite(clickedButton)
 {
     if($(clickedButton).hasClass("favorite"))
     {
-        var name = $(clickedButton).attr("id");
-        var index = favorites.indexOf(name);
+        var id = $(clickedButton).attr("id");
+        var index = favorites.indexOf(id);
 
         favorites.splice(index, 1);
 
@@ -23,9 +23,9 @@ function toggleFavorite(clickedButton)
     }
     else
     {
-        var name = $(clickedButton).attr("id");
+        var id = $(clickedButton).attr("id");
 
-        favorites.push(name);
+        favorites.push(id);
     }
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
