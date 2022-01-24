@@ -1,0 +1,118 @@
+
+
+*{
+    color:rgb(252, 245, 245)
+}
+body {
+    background-color: rgba(6, 7, 1, 0.76);
+
+}
+#logo{
+    width: 80px;                         
+    margin-left:100px;
+    filter: drop-shadow(-7px -7px 4px #000);
+    cursor: auto;
+}
+.navbar{
+    width: auto ;
+    height: 100px ;
+    background-color: rgba(6, 7, 1, 0.8); 
+    border-bottom: 1px solid rgb(219, 208, 50) ;
+    
+}
+
+.navbar-brand{
+    cursor: default;
+ }
+
+ .btnescolha {  
+    color: rgb(41, 40, 40);
+    padding-left: 10px ;
+    padding-right: 10px ;
+    background-color: #EAEA4E ;
+    border:none ;
+    cursor: pointer ; 
+}
+
+.navbtn{
+    margin-left:100px;
+    padding-left: 10px;
+}
+
+.btnescolha:active{
+    color:rgb(66, 56, 82); 
+}
+
+.btnescolha:hover{
+    background-color: rgb(255, 255, 0);
+    color:rgb(184, 143, 255) ;
+}
+
+.form-control{
+    position: relative;
+    width: 20VW;
+    margin-right: 100px;
+
+    
+}
+
+.maindiv{
+    background: rgb(67, 68, 68);
+    height: auto ;
+
+}
+
+.linhas_separacao{
+    width: 1000px;
+}
+.img_coin{
+    margin-left: 500px;
+    margin-right: 100px;
+}
+.div_coin{
+    padding: 5px;
+}
+.sparklineGraph{
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+}
+.footer{
+    border-top: 1px solid rgb(219, 208, 50);
+    width: 100%;
+    height: 35vh;
+    background-color: rgba(6, 7, 1, 0.8);
+    color: seashell;
+}
+.footer p , h3 {
+    
+    padding: 20px;    
+    margin-left: 200px;
+    width: 325px;
+    column-count: 1;
+}
+.material-icons{
+    float: right;
+    margin-right: 75px;
+    margin-top: 10px;
+    padding: 10px;
+}
+#icon_emails{
+    margin-left: 90px;
+}
+
+/*EDIÇÃO DA SCROLLBAR */
+
+    /*LARGURA DA SCROOLBAR*/
+    ::-webkit-scrollbar{
+        width: 10px; 
+    }
+        /*COR DA SCROOLBAR QUANDO O MOUSE NAO SE ENCONTRA POR CIMA DA MESMA*/
+    ::-webkit-scrollbar-thumb {
+        background: rgb(193, 197, 155);
+      }
+         /*COR DA SCROOLBAR QUANDO O MOUSE SE ENCONTRA POR CIMA DA MESMA*/
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(84, 88, 4, 0.719);
+        
+      }
