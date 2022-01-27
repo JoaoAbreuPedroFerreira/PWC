@@ -18,7 +18,13 @@ function toggleFavorite(clickedButton)
 
         if(location.pathname.split('/').pop() === "favoritos.html")
         {
-            $(clickedButton.parentNode).remove();
+            $(clickedButton).parents()[1].remove();
+            
+            if(favorites.join() == "")
+            {
+                $(".tableContainer").hide();
+                $("#favoritesError").show();
+            }
         }
     }
     else
@@ -29,5 +35,5 @@ function toggleFavorite(clickedButton)
     }
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    $(clickedButton).toggleClass("favorite");
+    $(clickedButton).toggleClass("favorite far fas");
 }

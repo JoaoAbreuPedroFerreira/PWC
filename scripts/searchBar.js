@@ -1,7 +1,21 @@
-$("#searchBar").keyup(function()
+$("#searchBar").keyup(search);
+
+$("#searchBar").on('search', function() 
 {
     var searchQuery = $(this).val().toUpperCase();
-    var coinsList = $("#coinsList").children("div");
+    var coinsList = $("#coinsList").children("tr");
+
+    if(searchQuery == "")
+    {
+        coinsList.show();
+    }
+});
+
+function search(e)
+{
+    $(e.target)[0] != null ? searchQuery = $(e.target).val().toUpperCase() : searchQuery = $(e).val().toUpperCase();
+
+    var coinsList = $("#coinsList").children("tr");
 
     coinsList.hide();
 
@@ -16,15 +30,4 @@ $("#searchBar").keyup(function()
             $(coin).toggle();
         }
     }
-});
-
-$("#searchBar").on('search', function() 
-{
-    var searchQuery = $(this).val().toUpperCase();
-    var coinsList = $("#coinsList").children("div");
-
-    if(searchQuery == "")
-    {
-        coinsList.show();
-    }
-});
+}
