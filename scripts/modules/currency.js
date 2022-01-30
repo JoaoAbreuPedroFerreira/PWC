@@ -3,6 +3,7 @@ var currencySymbol;
 
 if(!currency)
 {
+    currency = "eur";
     localStorage.setItem("currency", JSON.stringify("eur"));
 }
 
@@ -15,13 +16,13 @@ function switchCurrencySymbol()
 {
     switch(currency)
     {
-    case "usd" : currencySymbol = "$"; break;
-    case "eur" : currencySymbol = "€"; break;
-    case "jpy" : currencySymbol = "¥"; break;
+        case "usd" : currencySymbol = "$"; break;
+        case "eur" : currencySymbol = "€"; break;
+        case "jpy" : currencySymbol = "¥"; break;
     }
 }
 
-function changeCurrency(selectedCurrency)
+async function changeCurrency(selectedCurrency)
 {
     currency = $(selectedCurrency.target).val();
     localStorage.setItem("currency", JSON.stringify(currency));

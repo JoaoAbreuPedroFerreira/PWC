@@ -2,9 +2,8 @@ var favorites = JSON.parse(localStorage.getItem('favorites'));
 
 if(!favorites)
 {
-    var favoritesArray = [];
-
-    localStorage.setItem('favorites', JSON.stringify(favoritesArray));
+    favorites = [];
+    localStorage.setItem('favorites', JSON.stringify(favorites));
 }
 
 function toggleFavorite(clickedButton)
@@ -16,7 +15,7 @@ function toggleFavorite(clickedButton)
 
         favorites.splice(index, 1);
 
-        if(location.pathname.split('/').pop() === "favoritos.html")
+        if(location.pathname.split('/').pop() === "favorites.html")
         {
             $(clickedButton).parents()[1].remove();
             
@@ -35,5 +34,5 @@ function toggleFavorite(clickedButton)
     }
 
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    $(clickedButton).toggleClass("favorite far fas");
+    $(clickedButton).toggleClass("favorite fas");
 }

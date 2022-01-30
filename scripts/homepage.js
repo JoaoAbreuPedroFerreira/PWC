@@ -9,8 +9,8 @@ function apiRequest()
    $.ajax({
       type: "GET",
       url: url,
-   }).done(function(res){
-         populateList(res);
+      success: function(res){populateList(res);},
+      error: function(res){alert(res.responseText)}
    });
 }
 
@@ -49,12 +49,46 @@ function populateList(coins)
 
       if(favorites.indexOf(coins[i].id) > -1)
       {
-         favoriteButton.toggleClass("favorite far fas");
+         favoriteButton.addClass("favorite fas");
       }
 
       var favoriteButtonDiv = $(document.createElement("td")).append(favoriteButton);
 
-      sparklineGraph.sparkline(sparklineValues.map(sparkLinePrice => sparkLinePrice.toFixed(2)), {width: "72px", height: "34px"});
+      if(window.matchMedia("(prefers-color-scheme:light)"))
+      {
+         var fillColor = "#ffc107";
+         var lineColor = "#242525";
+      }
+      else
+      {
+         var fillColor = "#161616";
+         var lineColor = "#ffc107";
+      }
+
+      if(window.matchMedia("(prefers-color-scheme:light)").matches)
+      {
+         var fillColor = "#ffc107";
+         var lineColor = "#242525";
+      }
+      else
+      {
+         var fillColor = "#161616";
+         var lineColor = "#ffc107";
+      }
+
+      sparklineGraph.sparkline(sparklineValues,
+      {
+         type: 'line',
+         width: "72px", 
+         height: "34px",
+         lineColor: lineColor,
+         fillColor: fillColor,
+         spotColor: undefined,
+         minSpotColor: undefined,
+         maxSpotColor: undefined,
+         highlightSpotColor: undefined,
+         highlightLineColor: undefined
+      });
 
       coin.append(rank, logo, nameAndSymbol, price, changeIn24h, marketcap, sparklineGraph, favoriteButtonDiv);
 
@@ -91,5 +125,7 @@ function toggleTop(e)
 function redirect(e)
 {
    coinId = $($(e.target).parents()[0]).attr("data-coin-id");
-   window.location = `./Detalhes/detalhes.html?&currency=${currency}&selectedCoin=${coinId}`;
+   window.location = `./pages/details.html?selectedCoin=${coinId}`;
 }
+
+window.matchMedia("(prefers-color-scheme:light)").onchange = apiRequest;

@@ -11,6 +11,17 @@ $("#searchBar").on('search', function()
     }
 });
 
+$("#detailsSearchBar").on('search', function() 
+{
+    var searchQuery = $(this).val().toUpperCase();
+
+    if(searchQuery == "")
+    {
+        $("#detailsSearchBar").removeClass("searching");
+        $(".autocom-box").empty();
+    }
+});
+
 function search(e)
 {
     $(e.target)[0] != null ? searchQuery = $(e.target).val().toUpperCase() : searchQuery = $(e).val().toUpperCase();

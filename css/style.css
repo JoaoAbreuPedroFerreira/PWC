@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin);
+
+body
+{
+  font-family: "Lato", sans-serif;
+  overflow-x: auto;
+}
+
+.active 
+{
+  border-bottom: 5px solid #ffc107;
+}
+
+nav
+{
+    margin-bottom: 2vh;
+    border-bottom: 1px solid #ffc107;
+}
+
+#toggle
+{
+    margin-bottom: 2vh;
+}
+
+.table td
+{
+    vertical-align: middle;
+}
+
+.table tbody tr:hover
+{
+    background-color: #ffc1072a;
+}
+
+.table-responsive
+{
+    max-height: 75vh;
+    overflow: auto;
+    padding: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px #161616;
+    margin-bottom: 4vh;
+} 
+
+thead 
+{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+tr th
+{
+    color: #ffc107;
+}
+
+.coinRank
+{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #ffc107;
+}
+
+.favoriteButton
+{
+    color: #dc3545;
+}
+
+.favoriteButton:hover, .clickable
+{
+    cursor: pointer;
+}
+
+.fa-github
+{
+    color: #c2c2c2; 
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa-github:hover
+{
+    cursor: pointer;
+    color: #ffffff; 
+    box-shadow: 0 0 10px #e4d6ee5d;
+}
+
+.jqstooltip
+{
+    padding: 0!important;
+    border: 0!important;
+    width: auto!important;
+    align-items: center!important;
+}
+
+#favoritesError
+{
+    text-align: center;
+    margin-top: 10vh;
+}
+
+#detailsSearchBar
+{
+    margin-bottom: 4vh;
+}
+
+#detailsSearchBar .autocom-box
+{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+  
+#detailsSearchBar.searching .autocom-box
+{
+    opacity: 1;
+    pointer-events: auto;
+    background-color: #1F1F1F;
+    width: 100%;
+}
+
+.autocom-box li
+{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#detailsSearchBar.searching .autocom-box li
+{
+    display: block;
+}
+
+#detailsSearchBar.searching .autocom-box li:hover
+{
+    background-color: #ffc1072a;
+}
+
+.crypto_img
+{
+    border: 5px solid #ffc107!important;
+    border-radius: 50%!important;
+}
+
+.fa-exchange-alt
+{
+    color: #ffc107;
+}
+
+#SparklineGraph canvas
+{
+    width: 720px;
+    height: 340px;
+    background-color: #3B3B3B;
+    box-shadow: 0 0 4px #e4d6ee5d;
+}
+
+.detailsPage
+{
+    max-width: 50%;
+}
+
+@media (max-width: 992px)
+{
+    #currencySelect
+    {
+        margin-left: 20px;
+    }
+
+    .redirect a
+    {
+        margin-left: 25px;
+    }    
+
+    #SparklineGraph canvas
+    {
+        width: 360px;
+        height: 170px;
+    }
+
+    .detailsPage
+    {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-color-scheme:light)
+{
+    body
+    {
+        background-color: #fafafa;
+    }
+
+    .table-responsive
+    {
+        box-shadow: 0 0 10px 5px #cccccc;
+    } 
+
+    #SparklineGraph canvas
+    {
+        background-color: #ffffff;
+        box-shadow: 0 0 4px #cccccc;
+    }
+
+    .fa-github
+    {
+        color: #2c2c2c;
+    }
+
+    .border-top
+    {
+        border-top: 1px solid #242525!important
+    }
+
+    #detailsSearchBar.searching .autocom-box
+    {
+        background-color: #ffffff;
+    }
+}
